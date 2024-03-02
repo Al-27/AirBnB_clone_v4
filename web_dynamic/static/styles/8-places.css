@@ -99,3 +99,45 @@
 .user {
   margin-bottom: 1.5%;
 }
+
+
+.reviews {
+    margin-bottom: 5%;  
+}
+
+.reviews h2{
+    
+    text-align: left ;
+    margin-top: 20px;
+    border-bottom: 1px solid;
+}
+
+.reviews .show_toggle {
+    position: relative;
+    float: right;
+    bottom: 40px;
+    font-size: 10px;
+}
+
+.reviews .show_toggle:hover {
+    color: #FF5A5F;
+}
+
+.places .reviews>ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+}
+
+.places .reviews ul li h3 {
+    margin-top: 0;
+    padding-bottom: 0px;
+    margin-bottom: 10px;
+}
+
+.places .reviews ul li p {
+    padding-bottom: 5%;
+    margin-top: 0px;
+}

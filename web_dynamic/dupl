@@ -1,0 +1,6 @@
+#!/usr/bin/bash
+
+cp static/scripts/$1-hbnb.js static/scripts/$2-hbnb.js 
+cp templates/$1-hbnb.html templates/$2-hbnb.html
+cp $1-hbnb.py $2-hbnb.py
+sed -i "s/$1-hbnb/$2-hbnb/" $2-hbnb.py

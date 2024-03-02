@@ -38,8 +38,31 @@ $( document ).ready(()=>{
     
     $.ajax({url:"http://0.0.0.0:5001/api/v1/places_search/",method:"POST",contentType: "application/json",
     dataType: "json",data: "{}" }).done(res=>{
-       
-        
+        res.forEach(place => {
+            let article = $("<article/>")
+
+            let divTitlebx =  $("<div/>" ,{"class": "title_box"});
+            $( divTitlebx ).append($("<h2>").text(place.name));
+            $( divTitlebx ).append($("<div>").text(place.price_by_night).addClass("price_by_night"));
+          
+            let divInfo = $("<div/>",{"class": "information"});
+            let maxG = place.max_guest;
+            $( divInfo ).append($("<div/>").addClass("max_guest").text(`${place.max_guest} Guest${maxG > 1 ? "s" : ""}`));
+            let rooms = place.number_rooms;
+            $( divInfo ).append($("<div/>").addClass("number_rooms").text(`${rooms} Bedroom${rooms > 1 ? "s" : ""}`));
+            let brooms = place.number_bathrooms;
+            $( divInfo ).append($("<div/>").addClass("number_bathrooms").append(`${brooms} Bathroom${brooms > 1 ? "s" : ""}`));
+
+            let divDesc = $("<div/>",{"class": "description"});
+            $(divDesc).append(place.description);
+            
+            $(article).append( divTitlebx );
+            $(article).append( divInfo );
+            $(article).append( divDesc );
+            
+            $("section.places").append(article); 
+        });
+            
         
     });
 });

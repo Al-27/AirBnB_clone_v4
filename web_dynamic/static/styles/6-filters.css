@@ -82,7 +82,7 @@ button:hover {
     margin: 0px;
 }
 
-.amenities input{
+.amenities input, .locations input{
     margin-left: 10px;
 }
 
